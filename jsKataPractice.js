@@ -450,19 +450,17 @@ console.log(getCount('hindaaeiou'))
 
 // need to finish
 function accum(s) {
-    let w = s.split('')
+    let g = [...s]
 
-    let man = w.map(function(letter) {
-
-        let x = (w.indexOf(letter) + 1)
-
-        return letter.slice(letter).repeat(x)
-
+    let w = g.map(function(letter, idx) {
+        return letter.repeat(idx + 1)
     })
-    let woman = man.map(function(f) {
-        return f[0].toUpperCase() + f.slice(1)
+
+    let x = w.map(function(j) {
+        return j[0].toUpperCase() + j.slice(1).toLowerCase()
     })
-    return woman.join('-')
+    return x
+
 
 }
 
@@ -725,4 +723,56 @@ let findDigit = function(num, nth) {
 }
 
 console.log(findDigit(5679, 3))
+
+
+function noOdds(values) {
+    let x = values.filter(f => f % 2 == 0)
+    return x
+}
+console.log(noOdds([3, 0, 1, 6, 2, 5, 1, 7, -5, -2, 9, 4]))
+
+
+
+function isSortedAndHow(array) {
+    let origin = array.join('')
+
+    if (origin === array.sort(function(a, b) {
+            return a - b
+        }).join('')) {
+        return 'asc'
+    } else if (origin === array.sort(function(a, b) {
+            return b - a
+        }).join('')) {
+        return 'desc'
+    } else {
+        return 'no'
+    }
+
+}
+console.log(isSortedAndHow([5, 4, 3, 2, 1]))
+console.log(isSortedAndHow([1, 2, 3, 4, 5]))
+console.log(isSortedAndHow([2, 1, 3, 7, 4, 6, 5]))
+
+console.clear()
+
+function capitalize(s) {
+    let x = s.split('')
+    let y = x.map(function(n, i) {
+        if (i % 2 == 0) {
+            return n.toUpperCase()
+        } else {
+            return n.toLowerCase()
+        }
+    }).join('')
+    let z = x.map(function(n, i) {
+        if (i % 2 == 0) {
+            return n.toLowerCase()
+        } else {
+            return n.toUpperCase()
+        }
+    }).join('')
+    return [y, z]
+}
+console.log(capitalize('happy'))
+
 console.clear()
