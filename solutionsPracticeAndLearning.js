@@ -14,9 +14,8 @@ function findOdd(A) {
 console.log(findOdd([3, 3, 5, 5, 4, 4, 7, 7, 6, 6, 2, 2, 5]))
 
 console.clear()
-
-// function accum(s) {
-//     let w = s.split('')
+    // function accum(s) {
+    //     let w = s.split('')
 
 //     let man = w.map(function(letter) {
 //         let x = (w.indexOf(letter) + 1)

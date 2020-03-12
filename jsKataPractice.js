@@ -813,7 +813,7 @@ function repeatNumTimes(str, num) {
     }
 }
 
-console.log(repeatNumTimes('steiner is cool ', 2))
+console.log(repeatNumTimes('steiner is cool', 2))
 
 function truncate(str, num) {
     if (str.length < num) {
