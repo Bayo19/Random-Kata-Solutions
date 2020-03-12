@@ -39,7 +39,7 @@ function accum(s) {
     let x = w.map(function(j) {
         return j[0].toUpperCase() + j.slice(1).toLowerCase()
     })
-    return x
+    return x.join('-')
 
 
 }
