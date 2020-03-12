@@ -852,8 +852,6 @@ function repeatNumTimes(str, num) {
 
 console.log(repeatNumTimes('steiner is cool ', 2))
 
-console.clear()
-
 function truncate(str, num) {
     if (str.length < num) {
         return str
@@ -865,7 +863,6 @@ function truncate(str, num) {
 
 console.log(truncate('so i was walking down the street', 12))
 
-console.clear()
 
 function booWho(bool) {
     if (typeof(bool) == 'boolean') {
@@ -876,7 +873,6 @@ function booWho(bool) {
 }
 
 console.log(booWho(0))
-console.clear()
 
 function titleCase(str) {
     let w = str.slice(0, 1).toUpperCase()
