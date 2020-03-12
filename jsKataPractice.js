@@ -633,7 +633,7 @@ function menFromBoys(arr) {
     return z
 
 }
-console.log(menFromBoys([5, 3, , 3, 5, 5, 6, 1, 6, 8, 9, 1, 1, 1, 1, 2, 2]))
+console.log(menFromBoys([5, 3, 3, 5, 5, 6, 1, 6, 8, 9, 1, 1, 1, 1, 2, 2]))
 
 // reverse a number
 function reverseNumber(n) {
@@ -653,7 +653,6 @@ function reverseNumber(n) {
 
 console.log(reverseNumber(-56789))
 
-
 function twoOldestAges(ages) {
     let x = ages.sort(function(a, b) {
         return b - a
@@ -667,7 +666,6 @@ function twoOldestAges(ages) {
     return g
 }
 console.log(twoOldestAges([4, 5, 7, 2, 9, 8, 7, 2, 65, 34, 87]))
-
 
 
 // return longest word in string 
@@ -701,7 +699,6 @@ function sumDigits(number) {
 }
 
 console.log(sumDigits(8932))
-
 
 
 function noOdds(values) {
