@@ -702,35 +702,14 @@ function sumDigits(number) {
 
 console.log(sumDigits(8932))
 
-console.clear()
-    // nth digit of a number - not finished
-let findDigit = function(num, nth) {
-    if (nth <= 0) {
-        return -1
-    } else if (num < 0) {
-        let x = num.toString().split('')
-        x.shift()
-        let y = x.map(Number)
-        return y[nth - 1]
-    } else if (nth >= num.toString().length) {
-        return 0
-    } else {
-        let x = num.toString().split('')
-        x.shift()
-        let y = x.map(Number)
-        return y[nth - 1]
-    }
-}
-
-console.log(findDigit(5679, 3))
 
 
 function noOdds(values) {
     let x = values.filter(f => f % 2 == 0)
     return x
 }
-console.log(noOdds([3, 0, 1, 6, 2, 5, 1, 7, -5, -2, 9, 4]))
 
+console.log(noOdds([3, 0, 1, 6, 2, 5, 1, 7, -5, -2, 9, 4]))
 
 
 function isSortedAndHow(array) {
@@ -753,7 +732,6 @@ console.log(isSortedAndHow([5, 4, 3, 2, 1]))
 console.log(isSortedAndHow([1, 2, 3, 4, 5]))
 console.log(isSortedAndHow([2, 1, 3, 7, 4, 6, 5]))
 
-console.clear()
 
 function capitalize(s) {
     let x = s.split('')
@@ -775,7 +753,6 @@ function capitalize(s) {
 }
 console.log(capitalize('happy'))
 
-console.clear()
 
 function isVeryEvenNumber(n) {
     let x = n.toString().split('').map(Number).sort().reduce(function(a, c) {
@@ -797,15 +774,6 @@ function isVeryEvenNumber(n) {
 
 console.log(isVeryEvenNumber(8368811071152466))
 
-console.clear()
-
-function pattern(n) {
-
-}
-
-console.log(pattern(3))
-console.clear()
-
 function findLong(str) {
     let w = str.split(' ')
     let x = w.sort(function(a, b) {
@@ -815,7 +783,6 @@ function findLong(str) {
     return y
 }
 console.log(findLong('The quick brown fox jumped over the moon'))
-console.clear()
 
 function largestOfFour(n) {
     let w = n.map(function(j) {
@@ -823,13 +790,13 @@ function largestOfFour(n) {
     })
     return w
 }
+
 console.log(largestOfFour([
     [4, 5, 1, 3],
     [13, 27, 18, 26],
     [32, 35, 37, 39],
     [1000, 1001, 857, 1]
 ]))
-
 
 function confirmEnding(str, target) {
     if (str.slice(-target.length) === target) {
@@ -840,7 +807,6 @@ function confirmEnding(str, target) {
 }
 
 console.log(confirmEnding('bastiaj', 'iaj'))
-console.clear()
 
 function repeatNumTimes(str, num) {
     if (num < 0) {
