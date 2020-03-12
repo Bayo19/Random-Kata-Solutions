@@ -459,7 +459,7 @@ function accum(s) {
     let x = w.map(function(j) {
         return j[0].toUpperCase() + j.slice(1).toLowerCase()
     })
-    return x
+    return x.join('-')
 
 
 }
@@ -776,3 +776,112 @@ function capitalize(s) {
 console.log(capitalize('happy'))
 
 console.clear()
+
+function isVeryEvenNumber(n) {
+    let x = n.toString().split('').map(Number).sort().reduce(function(a, c) {
+        return a + c
+    })
+
+    if (x > 9) {
+        return isVeryEvenNumber(x)
+
+    } else {
+        let j = x
+        if (j % 2 == 0) {
+            return true
+        } else {
+            return false
+        }
+    }
+}
+
+console.log(isVeryEvenNumber(8368811071152466))
+
+console.clear()
+
+function pattern(n) {
+
+}
+
+console.log(pattern(3))
+console.clear()
+
+function findLong(str) {
+    let w = str.split(' ')
+    let x = w.sort(function(a, b) {
+        return a.length - b.length
+    })
+    let y = x[x.length - 1]
+    return y
+}
+console.log(findLong('The quick brown fox jumped over the moon'))
+console.clear()
+
+function largestOfFour(n) {
+    let w = n.map(function(j) {
+        return Math.max(...j)
+    })
+    return w
+}
+console.log(largestOfFour([
+    [4, 5, 1, 3],
+    [13, 27, 18, 26],
+    [32, 35, 37, 39],
+    [1000, 1001, 857, 1]
+]))
+
+
+function confirmEnding(str, target) {
+    if (str.slice(-target.length) === target) {
+        return true
+    } else {
+        return false
+    }
+}
+
+console.log(confirmEnding('bastiaj', 'iaj'))
+console.clear()
+
+function repeatNumTimes(str, num) {
+    if (num < 0) {
+        return ''
+    } else {
+        return str.repeat(num)
+    }
+}
+
+console.log(repeatNumTimes('steiner is cool ', 2))
+
+console.clear()
+
+function truncate(str, num) {
+    if (str.length < num) {
+        return str
+    } else {
+        let x = str.slice(0, num)
+        return x + '...'
+    }
+}
+
+console.log(truncate('so i was walking down the street', 12))
+
+console.clear()
+
+function booWho(bool) {
+    if (typeof(bool) == 'boolean') {
+        return true
+    } else if (typeof(bool) == 'number') {
+        return undefined
+    }
+}
+
+console.log(booWho(0))
+console.clear()
+
+function titleCase(str) {
+    let w = str.slice(0, 1).toUpperCase()
+    let x = str.slice(1).toLowerCase()
+    return w + x
+}
+
+console.log(titleCase('i\'m kIND of cool'))
