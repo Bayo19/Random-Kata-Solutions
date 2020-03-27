@@ -844,3 +844,19 @@ function titleCase(str) {
 }
 
 console.log(titleCase('i\'m kIND of cool'))
+
+console.clear()
+
+// function solution(number) {
+//     let sum = []
+
+//     for (let i = 1; i < number; i++) {
+//         if (i % 3 == 0 || i % 5 == 0) {
+//             sum.push(i)
+//         }
+//     }
+//     return sum.reduce(function(a, c) {
+//         return a + c
+//     });
+// }
+// console.log(solution(10))
