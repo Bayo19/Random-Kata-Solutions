@@ -572,3 +572,136 @@ function filter_list(l) {
 console.log(filter_list([1, 2, 'a', 'b']))
 
 console.clear()
+
+function min(arr, ret) {
+    if (ret == 'value') {
+        return Math.min(...arr)
+    } else {
+        return arr.indexOf(Math.min(...arr))
+    }
+}
+console.log(min([100, 200, 300, 36, 400, 500], 'value'))
+console.log(min([100, 200, 300, 36, 400, 500], 'index'))
+
+console.clear()
+
+function divisors(integer) {
+    let x = integer
+    let u = []
+    for (i = 0; i < integer; i++) {
+        u.push(i)
+    }
+    let v = u.filter(function(a) {
+        if (integer % a == 0) {
+            return a
+        }
+    })
+
+    if (v[v.length - 1] == 1) {
+        return `${x} is a prime number`
+    } else {
+        return v.filter(function(d) {
+            return d != 1
+        })
+    }
+}
+
+console.log(divisors(12))
+console.log(divisors(25))
+console.log(divisors(13))
+console.log(divisors(2))
+console.log(divisors(3))
+console.log(divisors(5))
+console.log(divisors(7))
+
+console.clear()
+
+function powerOf4(n) {
+    if (n == 1) {
+        return true
+    } else if (typeof(n) == 'number') {
+        return Math.log(n) / Math.log(4) % 1 == 0
+    } else {
+        return false
+    }
+}
+
+console.log(powerOf4(1024))
+console.log(powerOf4(16 * 4))
+console.log(powerOf4(44))
+console.log(powerOf4(1))
+console.log(powerOf4(3.1415))
+console.log(powerOf4("4"))
+console.log(powerOf4(null))
+console.log(powerOf4(undefined))
+console.log(powerOf4(function() {}))
+console.log(powerOf4(1))
+
+console.clear()
+
+function shorter_reverse_longer(a, b) {
+    if (a.length == b.length) {
+
+        return [...b, ...a.split('').reverse(), ...b].join('')
+    } else {
+        let max
+        let min
+        if (a.length < b.length) {
+            min = a
+            max = b
+        } else {
+            min = b
+            max = a
+        }
+        return [...min, max.split('').reverse().join(''), ...min].join('')
+
+    }
+}
+console.log(shorter_reverse_longer("first", "abcde"))
+console.log(shorter_reverse_longer("hello", "bau"))
+console.log(shorter_reverse_longer("abcde", "fghi"))
+
+console.clear()
+
+var gimme = function(inputArray) {
+    let x = inputArray.slice()
+    let mid
+    if (x[1] > x[0] && x[1] < x[2]) {
+        mid = x[1]
+    } else if (x[0] > x[1] && x[0] < x[2]) {
+        mid = x[0]
+    } else {
+        mid = x[2]
+    }
+    let res = inputArray.indexOf(mid)
+    return res
+};
+
+console.log(gimme([2, 1, 3]))
+console.log(gimme([5, 10, 14]))
+console.log(gimme([-69, -97, -71]))
+
+console.clear()
+
+function summer(...r) {
+    return [...r].reduce(function(a, c) {
+        return a + c
+    })
+}
+
+console.log(summer(1, 2, 3, 4, 5))
+console.log(summer(8, 2))
+console.log(summer(1, 2, 3))
+
+console.clear()
+
+function descOrder(a) {
+    let f = a.toString().split('').sort(function(a, b) {
+        return b - a
+    })
+    return parseInt(f.join(''))
+}
+
+console.log(descOrder(21445))
+console.log(descOrder(145263))
+console.log(descOrder(123456789))
