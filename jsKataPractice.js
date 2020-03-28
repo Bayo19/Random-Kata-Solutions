@@ -339,11 +339,7 @@ function opposite(number) {
 
 console.log(opposite(9789.678))
 
-function stupid(thisStupidMotherfucker = "hello world") {
-    return thisStupidMotherfucker
-}
 
-console.log(stupid())
 
 
 function sumMix(x) {
