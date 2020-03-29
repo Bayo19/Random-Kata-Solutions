@@ -863,3 +863,15 @@ function splitter(str) {
 console.log(splitter('CamelCase'))
 
 console.clear()
+
+//palindrome checker /\40/g - regex checks for a space
+function palin(sen) {
+    let x = sen.replace(/[.!?]/g, '')
+    let y = x.replace(/\40/g, '')
+    let z = y.split('').reverse().join('')
+    return y.toLowerCase() == z.toLowerCase()
+
+}
+
+console.log(palin("Was it a car or a cat I saw?"))
+console.log(palin("Njoku, Samson Ebere. Plenty!"))
