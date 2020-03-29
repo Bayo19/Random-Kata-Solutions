@@ -705,3 +705,81 @@ function descOrder(a) {
 console.log(descOrder(21445))
 console.log(descOrder(145263))
 console.log(descOrder(123456789))
+
+console.clear()
+
+Array.prototype.numberOfOccurrences = function(n) {
+    let x = []
+    for (i = 0; i < this.length; i++) {
+        if (this[i] == n) {
+            x.push(this[i])
+
+        }
+
+    }
+    return x.length
+
+}
+let art = [3, 4, 6, 5, 7, 8, 6, 9, 8]
+console.log(art.numberOfOccurrences(8))
+
+console.clear()
+
+function formatWords(words) {
+    if (words == undefined || [...words] == "") {
+        return ``
+    } else {
+        let x = words.filter(function(a) {
+            return a != ''
+        })
+        if (words.length == 1) {
+            return words.join('')
+        } else if (x.length == 1) {
+            return x.join('')
+        } else if (x.length == 2) {
+            return `${x[0]} and ${x[1]}`
+        } else {
+            let temp = x[x.length - 1]
+            x.push('and')
+            x.push(temp)
+            return x.slice(0, -3).join(', ') + ' ' + x.slice(-2).join(' ')
+        }
+    }
+}
+
+console.log(formatWords(['ninja', 'steiner', 'samurai', 'ronin']))
+console.log(formatWords(['ninja', '', 'ronin']))
+console.log(formatWords(['', '', 'three']))
+console.log(formatWords(['one']))
+console.log(formatWords([]))
+console.log(formatWords([""]))
+console.log(formatWords(null))
+
+console.clear()
+
+function toCamelCase(str) {
+    if (str == '' || str == null) {
+        return ''
+    } else {
+        let x = str.split('')
+        let y = x.map(function(a) {
+            if (a == '_' || a == '-') {
+                return ' '
+            } else {
+                return a
+            }
+        })
+        let f = y.join('').split(' ')
+        let g = f.slice(1).map(function(b) {
+            return b[0].toUpperCase() + b.slice(1)
+        })
+
+        let h = f[0]
+        return h + g.join('')
+    }
+}
+
+console.log(toCamelCase("The_Stealth_Warrior"))
+console.log(toCamelCase("the-stealth-warrior"))
+console.log(toCamelCase('A-B-C'))
+console.log(toCamelCase(''))
