@@ -783,3 +783,56 @@ console.log(toCamelCase("The_Stealth_Warrior"))
 console.log(toCamelCase("the-stealth-warrior"))
 console.log(toCamelCase('A-B-C'))
 console.log(toCamelCase(''))
+
+console.clear()
+
+function spleet(str) {
+
+
+    let x = str.split('')
+    if (x.length % 2 != 0) {
+        let z = x.slice(x.length - 1)
+        let xx = x.slice(0, x.length - 1)
+        let f = xx.filter(function(a, i) {
+            if (i % 2 == 0) {
+                return a
+            }
+        })
+
+        let g = xx.filter(function(a, i) {
+            if (i % 2 != 0) {
+                return a
+            }
+        })
+        let s = []
+
+        for (i = 0; i < f.length; i++) {
+            s.push(`${f[i]}${g[i]}`)
+        }
+        let zz = z + '_'
+        return s.concat(zz)
+
+    } else {
+        let f = x.filter(function(a, i) {
+            if (i % 2 == 0) {
+                return a
+            }
+        })
+        let g = x.filter(function(a, i) {
+            if (i % 2 != 0) {
+                return a
+            }
+        })
+        let s = []
+
+        for (i = 0; i < f.length; i++) {
+            s.push(`${f[i]}${g[i]}`)
+        }
+        return s
+    }
+
+
+}
+
+console.log(spleet('abc'))
+console.log(spleet('abcdef'))
