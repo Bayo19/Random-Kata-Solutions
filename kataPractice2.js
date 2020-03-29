@@ -854,3 +854,12 @@ function sortme(names) {
 
 console.log(sortme(["Hello", "there", "I'm", "fine"]))
 console.log(sortme(["C", "d", "a", "B"]))
+
+console.clear()
+
+function splitter(str) {
+    return str.replace(/([a-z0-9])([A-Z])/g, '$1 $2').trim();
+}
+console.log(splitter('CamelCase'))
+
+console.clear()
