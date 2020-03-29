@@ -788,7 +788,6 @@ console.clear()
 
 function spleet(str) {
 
-
     let x = str.split('')
     if (x.length % 2 != 0) {
         let z = x.slice(x.length - 1)
@@ -836,3 +835,22 @@ function spleet(str) {
 
 console.log(spleet('abc'))
 console.log(spleet('abcdef'))
+console.clear()
+
+function sortme(names) {
+    let x = names
+    let y = x.sort(function(a, b) {
+
+        if (a[0].toLowerCase() < b[0].toLowerCase()) {
+            return -1
+        }
+        if (b[0].toLowerCase() < a[0].toLowerCase()) {
+            return 1
+        }
+        return 0
+    })
+    return y
+}
+
+console.log(sortme(["Hello", "there", "I'm", "fine"]))
+console.log(sortme(["C", "d", "a", "B"]))
