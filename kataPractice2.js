@@ -866,7 +866,7 @@ console.clear()
 
 //palindrome checker /\40/g - regex checks for a space
 function palin(sen) {
-    let x = sen.replace(/[.!?]/g, '')
+    let x = sen.replace(/[\',.!?]/g, '')
     let y = x.replace(/\40/g, '')
     let z = y.split('').reverse().join('')
     return y.toLowerCase() == z.toLowerCase()
@@ -875,3 +875,7 @@ function palin(sen) {
 
 console.log(palin("Was it a car or a cat I saw?"))
 console.log(palin("Njoku, Samson Ebere. Plenty!"))
+console.log(palin('Madam In Eden, I\'m Adam'))
+console.log(palin('A Santa Lived As a Devil At NASA'))
+console.log(palin('Dammit, I\'m Mad!'))
+console.log(palin('Do Geese See God?'))
