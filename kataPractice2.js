@@ -870,7 +870,6 @@ function palin(sen) {
     let y = x.replace(/\40/g, '')
     let z = y.split('').reverse().join('')
     return y.toLowerCase() == z.toLowerCase()
-
 }
 
 console.log(palin("Was it a car or a cat I saw?"))
@@ -879,3 +878,16 @@ console.log(palin('Madam In Eden, I\'m Adam'))
 console.log(palin('A Santa Lived As a Devil At NASA'))
 console.log(palin('Dammit, I\'m Mad!'))
 console.log(palin('Do Geese See God?'))
+
+console.clear()
+
+function duppy(...h) {
+    let y = h
+    let x = new Set(h)
+    let z = [...x]
+    return z.length !== y.length
+}
+
+console.log(duppy(1, 2, 3))
+console.log(duppy(1, 2, 3, 2))
+console.log(duppy('1', '2', '3', '4'))
