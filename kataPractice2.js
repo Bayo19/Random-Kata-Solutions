@@ -891,3 +891,4 @@ function duppy(...h) {
 console.log(duppy(1, 2, 3))
 console.log(duppy(1, 2, 3, 2))
 console.log(duppy('1', '2', '3', '4'))
+console.log(duppy('stein', 'roth', 'stein'))
