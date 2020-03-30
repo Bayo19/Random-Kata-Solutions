@@ -892,3 +892,77 @@ console.log(duppy(1, 2, 3))
 console.log(duppy(1, 2, 3, 2))
 console.log(duppy('1', '2', '3', '4'))
 console.log(duppy('stein', 'roth', 'stein'))
+
+console.clear()
+
+function customSort(item) {
+    if (item.length < 2) {
+        return item
+    } else {
+        let left = []
+        let right = []
+        const pivot = item[0]
+        for (i of item.slice(1)) {
+            if (i < pivot) {
+                left.push(i)
+            } else {
+                right.push(i)
+            }
+        }
+        return [...customSort(left), pivot, ...customSort(right)]
+    }
+}
+
+console.log(customSort([1, 5, 3, 2, 4]))
+
+console.clear()
+
+// using recursion is cool
+function digital_root(n) {
+    if (n.toString().length == 1) {
+        return n
+    } else {
+        let x = n.toString().split('').map(Number)
+
+        let y = x.reduce(function(a, c) {
+            return a + c
+        })
+        return digital_root(y)
+    }
+}
+
+console.log(digital_root(16))
+console.log(digital_root(942))
+console.log(digital_root(132189))
+console.log(digital_root(493193))
+
+console.clear()
+
+function createPhoneNumber(numbers) {
+    if (numbers.length == 10) {
+        return `(${numbers[0]}${numbers[1]}${numbers[2]}) ${numbers[3]}${numbers[4]}${numbers[5]}-${numbers[6]}${numbers[7]}${numbers[8]}${numbers[9]}`
+    }
+}
+
+console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
+
+console.clear()
+
+function spinWords(x) {
+    return x.split(' ').map(function(a) {
+        if (a.length >= 5) {
+            return a.split('').reverse().join('')
+        } else {
+            return a
+        }
+    }).join(' ')
+
+}
+
+console.log(spinWords('Welcome'))
+console.log(spinWords('Hey fellow warriors'))
+console.log(spinWords("This is a test"))
+console.log(spinWords("This is another test"))
+console.log(spinWords("You are almost to the last test"))
+console.log(spinWords("Just kidding there is still one more"))
+console.log(spinWords('Seriously this is the last one'))
