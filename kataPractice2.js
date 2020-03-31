@@ -956,7 +956,6 @@ function spinWords(x) {
             return a
         }
     }).join(' ')
-
 }
 
 console.log(spinWords('Welcome'))
@@ -966,3 +965,14 @@ console.log(spinWords("This is another test"))
 console.log(spinWords("You are almost to the last test"))
 console.log(spinWords("Just kidding there is still one more"))
 console.log(spinWords('Seriously this is the last one'))
+
+console.clear()
+
+function removeSmallest(numbers) {
+    let x = new Set(numbers)
+
+    return x
+}
+
+console.log(removeSmallest([5, 3, 2, 1, 4]))
+console.log(removeSmallest([2, 2, 1, 2, 1]))
