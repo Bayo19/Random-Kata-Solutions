@@ -981,3 +981,5 @@ console.log(isPangram('The quick brown fox jumps over the lazy dog'))
 console.log(isPangram('This is not a pangram'))
 console.log(isPangram('Pack my box with five dozen liquor jugs'))
 console.log(isPangram('ABCD45EFGH,IJK,LMNOPQR56STUVW3XYZ'))
+
+console.clear()
