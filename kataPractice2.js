@@ -967,3 +967,17 @@ console.log(spinWords("Just kidding there is still one more"))
 console.log(spinWords('Seriously this is the last one'))
 
 console.clear()
+console.log('others')
+
+function isPangram(string) {
+    let x = 'abcdefghijklmnopqrstuvwxyz'
+    let s = string.replace(/\40/g, '').toLowerCase().split('').sort()
+    let y = new Set(s)
+    return [...y].slice([...y].indexOf('a')).join('') == x
+
+}
+
+console.log(isPangram('The quick brown fox jumps over the lazy dog'))
+console.log(isPangram('This is not a pangram'))
+console.log(isPangram('Pack my box with five dozen liquor jugs'))
+console.log(isPangram('ABCD45EFGH,IJK,LMNOPQR56STUVW3XYZ'))
