@@ -1001,3 +1001,45 @@ console.log(toWeirdCase('Hello'))
 console.log(toWeirdCase('This'))
 
 console.clear()
+
+function alphabetPosition(text) {
+    if (text == '') {
+        return ''
+    }
+    let alph = function(al) {
+        let j = 'abcdefghijklmnopqrstuvwxyz'
+
+        let k = j.split('')
+        let pos = k.indexOf(al) + 1
+        return pos
+
+    }
+
+    let x = text.toLowerCase().replace(/[0-9\40'.!}^%{=1<:#+>&@\[\];*_\(\),-\\$\|£`?]/g, '')
+
+
+    if (x == '') {
+        return ''
+    } else {
+        let y = x.split('')
+        if (y == 0) {
+            return ''
+        }
+        return y.map(function(a) {
+            return alph(a).toString()
+        }).join(' ')
+    }
+
+}
+
+console.log(alphabetPosition("The sunset sets at twelve o' clock."))
+console.log(alphabetPosition("The narwhal bacons at midnight."))
+console.log(alphabetPosition('p*;lxwrn'))
+console.log(alphabetPosition(',+&8-0[)'))
+console.log(alphabetPosition("scb/?&e#"))
+console.log(alphabetPosition("a^£%^&*)"))
+console.log(alphabetPosition("^£b%^&*)"))
+console.log(alphabetPosition("^£%^c&*)"))
+console.log(alphabetPosition("^d%^&*)"))
+console.log(alphabetPosition("^£%,<e&*)"))
+console.log(alphabetPosition("````"))
