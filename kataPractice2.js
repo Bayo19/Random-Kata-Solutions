@@ -1043,3 +1043,5 @@ console.log(alphabetPosition("^£%^c&*)"))
 console.log(alphabetPosition("^d%^&*)"))
 console.log(alphabetPosition("^£%,<e&*)"))
 console.log(alphabetPosition("````"))
+
+console.clear()
