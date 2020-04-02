@@ -983,3 +983,21 @@ console.log(isPangram('Pack my box with five dozen liquor jugs'))
 console.log(isPangram('ABCD45EFGH,IJK,LMNOPQR56STUVW3XYZ'))
 
 console.clear()
+
+function toWeirdCase(string) {
+    return string.split(' ').map(function(a, i) {
+        return a.split('').map(function(b, i) {
+            if (i % 2 == 0) {
+                return b.toUpperCase()
+            } else {
+                return b
+            }
+        }).join('')
+    }).join(' ')
+}
+
+console.log(toWeirdCase('This is a test'))
+console.log(toWeirdCase('Hello'))
+console.log(toWeirdCase('This'))
+
+console.clear()
