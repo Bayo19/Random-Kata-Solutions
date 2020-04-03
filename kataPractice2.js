@@ -1046,16 +1046,6 @@ console.log(alphabetPosition("````"))
 
 console.clear()
 
-function fibonacci(n) {
-    if (n === 1) {
-        return [0, 1]
-    } else {
-        let s = fibonacci(n - 1)
-        s.push(s[s.length - 1] + s[s.length - 2])
-
-        return s
-    }
-}
 
 function fibo(n) {
     let res = []
@@ -1078,7 +1068,93 @@ function fibo(n) {
 
 }
 
+function nthFibo(n) {
+    let res = []
+
+    if (n == 0) {
+        res.push(0)
+        return res
+    } else if (n == 1) {
+        res.push(0, 1)
+        return res
+    }
+    res.push(0, 1)
+    for (i = 0; i < n - 1; i++) {
+
+        res.push(res[res.length - 1] + res[res.length - 2])
+
+    }
+
+    return res[n - 1]
+}
+
+function fastfibo(n) {
+    let res = []
+
+    if (n == 0) {
+        res.push(0)
+        return res
+    } else if (n == 1) {
+        res.push(0, 1)
+        return res
+    }
+    res.push(0, 1)
+    for (i = 0; i < n - 1; i++) {
+
+        res.push(res[res.length - 1] + res[res.length - 2])
+
+    }
+
+    return res[res.length - 1]
+}
 
 
-console.log(fibonacci(9))
-console.log(fibo(9))
+console.log(fastfibo(249))
+    // console.log(fibo(5))
+    // console.log(nthFibo(5))
+console.clear()
+
+function dominator(arr) {
+    let u = arr.sort()
+
+    return u
+}
+
+console.log(dominator([3, 4, 3, 2, 3, 1, 3, 3]))
+console.log(dominator([1, 1, 1, 2, 2, 2, 2]))
+
+console.clear()
+
+function moreZeros(s) {
+    let x = s.split('')
+    let z = []
+    for (i = 0; i < x.length; i++) {
+        z.push(x[i].charCodeAt().toString(2))
+    }
+
+    let f = z.filter(function(a) {
+        let b = a.split('')
+        let left = []
+        let right = []
+        for (i = 0; i < b.length; i++) {
+            if (b[i] == '0' || b[i] == 0) {
+                left.push(b[i])
+            }
+            if (b[i] == '1' || b[i] == 1) {
+                right.push(b[i])
+            }
+        }
+        if (left.length > right.length) {
+            return a
+        }
+    })
+
+    let j = f.map(function(a) {
+        return String.fromCharCode(parseInt(a, 2))
+    })
+    return Array.from(new Set(j))
+
+}
+
+console.log(moreZeros('abcde'))
+console.log(moreZeros('DIGES'))
