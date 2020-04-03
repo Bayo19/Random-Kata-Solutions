@@ -1045,3 +1045,40 @@ console.log(alphabetPosition("^£%,<e&*)"))
 console.log(alphabetPosition("````"))
 
 console.clear()
+
+function fibonacci(n) {
+    if (n === 1) {
+        return [0, 1]
+    } else {
+        let s = fibonacci(n - 1)
+        s.push(s[s.length - 1] + s[s.length - 2])
+
+        return s
+    }
+}
+
+function fibo(n) {
+    let res = []
+
+    if (n == 0) {
+        res.push(0)
+        return res
+    } else if (n == 1) {
+        res.push(0, 1)
+        return res
+    }
+    res.push(0, 1)
+    for (i = 0; i < n - 1; i++) {
+
+        res.push(res[res.length - 1] + res[res.length - 2])
+
+    }
+
+    return res
+
+}
+
+
+
+console.log(fibonacci(9))
+console.log(fibo(9))

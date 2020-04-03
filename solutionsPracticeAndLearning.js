@@ -128,3 +128,16 @@ function countLettersAndDigits(input) {
 console.log(countLettersAndDigits("hel2!lo"))
 console.log(countLettersAndDigits("ttttt"))
 console.log(countLettersAndDigits('wicked .. !'))
+
+function fibonacci(n) {
+    if (n === 1) {
+        return [0, 1]
+    } else {
+        let s = fibonacci(n - 1)
+        s.push(s[s.length - 1] + s[s.length - 2])
+
+        return s
+    }
+}
+
+// kind of don't understand the use of recusion in the above implementation of fibonacci sequence
