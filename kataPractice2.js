@@ -1157,4 +1157,25 @@ function moreZeros(s) {
 }
 
 console.log(moreZeros('abcde'))
-console.log(moreZeros('DIGES'))
+console.log(moreZeros('DIGEST'))
+
+console.clear()
+
+let countBits = function(n) {
+    let x = n.toString()
+    let y = Number(x).toString(2)
+
+
+    return y.split('').filter(function(a) {
+        return a.match(/[1]/g)
+    }).length
+
+};
+
+let log = console.log
+log(countBits(0))
+log(countBits(4))
+log(countBits(7))
+log(countBits(9))
+log(countBits(10))
+log(countBits(1234))
