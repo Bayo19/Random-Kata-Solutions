@@ -1179,3 +1179,223 @@ log(countBits(7))
 log(countBits(9))
 log(countBits(10))
 log(countBits(1234))
+
+
+
+function grabscrab(anagram, dictionary) {
+    let x = anagram.toLowerCase().split('').sort(function(a, b) {
+        if (a < b) {
+            return -1
+        }
+
+        if (b < a) {
+            return 1
+        }
+    }).join('')
+
+    let y = dictionary.filter(function(a) {
+        if (a.toLowerCase().split('').sort(function(b, c) {
+                if (b < c) {
+                    return -1
+                }
+
+                if (c < b) {
+                    return 1
+                }
+            }).join('') == x) { return a }
+
+    })
+
+    return y
+}
+
+
+log(grabscrab("ortSp", ["sport", "parrot", "ports", "matey"]))
+log(grabscrab("ortSp", ['jeff']))
+
+let clear = console.clear
+clear()
+
+String.prototype.isUpperCase = function() {
+    let x = Object.values(this).join('')
+    return x === x.toUpperCase()
+
+}
+
+log('c'.isUpperCase())
+log('A'.isUpperCase())
+
+clear()
+
+
+function palindrome(num) {
+
+    if (typeof(num) != 'number' || num < 0) {
+        return 'Not valid'
+    }
+    let x = num.toString(10).split('').reverse().join('')
+    if (Number(x) == num) {
+        return true
+    } else {
+        return false
+    }
+}
+
+log(palindrome(23345))
+log(palindrome(110011))
+log(palindrome(2332))
+
+clear()
+
+function findUniq(arr) {
+    let x = arr
+    if (x[0] != x[1] && x[0] != x[x.length - 1]) {
+        return x[0]
+    }
+    let y = []
+    for (i = 0; i < x.length; i++) {
+        if (x[i] != x[i + 1]) {
+            y.push(x[i])
+        }
+    }
+    return y[1]
+}
+
+log(findUniq([1, 1, 1, 2, 1, 1]))
+log(findUniq([0, 0, 0.55, 0, 0]))
+log(findUniq([0, 4, 0, 0, 0]))
+log(findUniq([0, 1, 1, 1, 1, 1, 1, 1]))
+
+clear()
+
+String.prototype.camelCase = function() {
+    if ([...this].join('').replace(/\s/g, '').length == 0) {
+        return ''
+    } else {
+        let xx = this.split(' ').slice(0, 1).map(function(a) {
+            return a[0].toUpperCase() + a.slice(1)
+        })
+
+        let x = this.split(' ').slice(1).map(function(a) {
+            return a[0].toUpperCase() + a.slice(1)
+        }).join(' ')
+        return (xx + x).replace(/\s/g, '')
+    }
+
+}
+
+log('hello case'.camelCase())
+log("camel case word".camelCase())
+log("Steinbeck speaks solemnly".camelCase())
+log('    '.camelCase())
+
+
+clear()
+
+function tribonacci(signature, n) {
+    let res = signature
+    if (n === 1) {
+        return [].concat(res[0])
+    }
+
+    if (n === 0) {
+        return new Array()
+    }
+
+    if (n > 1) {
+        for (i = 0; i < n; i++) {
+            res.push(res[res.length - 1] + res[res.length - 2] + res[res.length - 3])
+        }
+        return res.slice(0, n)
+    }
+}
+
+log(tribonacci([1, 1, 1], 10))
+log(tribonacci([0, 0, 1], 10))
+log(tribonacci([0, 0, 0, ], 10))
+log(tribonacci([1, 2, 3], 10))
+log(tribonacci([3, 2, 1], 10))
+log(tribonacci([3, 2, 1], 1))
+
+clear()
+
+var moveZeros = function(arr) {
+    let p = arr.filter(function(a) {
+        return a === Number(0)
+    })
+
+    let q = arr.filter(function(a) {
+        return a !== Number(0)
+    })
+
+    return q.concat(p)
+
+}
+
+log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]))
+
+clear()
+
+function anagrams(word, words) {
+
+    String.prototype.sortLetters = function() {
+
+        let x = this.split().join()
+
+        return x.split('').sort(function(a, b) {
+
+            if (a < b) {
+                return -1
+            }
+
+            if (b < a) {
+                return 1
+            }
+
+        }).join('')
+
+    }
+
+    return words.filter(function(a) {
+        if (a.sortLetters() == word.sortLetters()) {
+            return a
+        }
+    })
+
+}
+
+log(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']))
+log(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']))
+log(anagrams('laser', ['lazing', 'lazy', 'lacer']))
+
+clear()
+
+function firstNonRepeatingLetter(s) {
+    if (s == null || s == undefined || s.length == 0) {
+        return s
+    }
+
+    let x = s.split('')
+    let p = []
+
+    for (i of x) {
+        if (x.lastIndexOf(i) == x.indexOf(i)) {
+            p.push(i)
+        }
+    }
+    return p[0]
+}
+
+log(firstNonRepeatingLetter('stress'))
+log(firstNonRepeatingLetter('sTress'))
+log(firstNonRepeatingLetter('moonmen'))
+
+clear()
+
+function validPhoneNumber(phoneNumber) {
+    if (phoneNumber.match(/^\([0-9]{3}\)\40[0-9]{3}\-[0-9]{4}$/g) != null) {
+        return true
+    } else {
+        return false
+    }
+}
