@@ -1399,3 +1399,78 @@ function validPhoneNumber(phoneNumber) {
         return false
     }
 }
+
+clear()
+
+function reverse(str) {
+
+    if (str.replace(/\s/g, '') == '') {
+        return ''
+    }
+
+    let y = str.split(' ').map(function(a) {
+        if (str.split(' ').indexOf(a) % 2 != 0) {
+            return a.split('').reverse().join('')
+        } else {
+            return a
+        }
+    }).join(' ')
+
+    return y
+
+}
+
+log(reverse("Reverse this string, please!"))
+log(reverse('    '))
+log(reverse("I really don't like reversing strings!"))
+
+clear()
+
+function sortTheInnerContent(words) {
+    let x = words.split(' ')
+    let y = x.map(function(a) {
+        let ss = a.split('')
+        let f = ss.shift()
+        let l = ss.pop()
+
+        let x = ss.sort(function(a, b) {
+            if (a > b) {
+                return -1
+            }
+            if (b > a) {
+                return 1
+            }
+        })
+
+        return [f, ...x, l].join('')
+    })
+    return y.join(' ')
+}
+
+log(sortTheInnerContent('sort the inner content in descending order'))
+log(sortTheInnerContent("wait for me"))
+log(sortTheInnerContent('this kata is easy'))
+
+clear()
+
+function searchNames(logins) {
+    return logins.filter(function(a, i) {
+        if (a[0] == '.') {
+            return i++
+        }
+    })
+
+}
+
+log(searchNames(["foo", "foo@bar.com", "bar", "bar@foo.com", ".foo", "food@bar.com"]))
+
+clear()
+
+function getSumOfDigits(integer) {
+    return integer.toString().split('').map(Number).reduce(function(a, c) {
+        return a + c
+    })
+
+}
+
+log(getSumOfDigits(123))
