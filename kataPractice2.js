@@ -1474,3 +1474,92 @@ function getSumOfDigits(integer) {
 }
 
 log(getSumOfDigits(123))
+
+clear()
+
+function basicOp(operation, value1, value2) {
+    let val1 = +value1
+    let val2 = +value2
+
+    if (operation == '+') {
+        return val1 + val2
+    } else if (operation == '-') {
+        return val1 - val2
+    } else if (operation == '*') {
+        return val1 * val2
+    } else return val1 / val2
+
+}
+
+log(basicOp('+', 4, 7))
+
+clear()
+
+function rgb(r, g, b) {
+    if (r < 0) {
+        r = 0
+    } else if (r > 255) {
+        r = 255
+    }
+    if (g < 0) {
+        g = 0
+    } else if (g > 255) {
+        g = 255
+    }
+    if (b < 0) {
+        b = 0
+    } else if (b > 255) {
+        b = 255
+    }
+
+    let rr = r.toString(16)
+    if (rr.length < 2) {
+        rr = `0${rr}`
+    }
+    let gg = g.toString(16)
+    if (gg.length < 2) {
+        gg = `0${gg}`
+    }
+    let bb = b.toString(16)
+    if (bb.length < 2) {
+        bb = `0${bb}`
+    }
+    let res = `#${rr}${gg}${bb}`.toUpperCase()
+    let finalres
+    if (res.length == 5) {
+        finalres = `0${res}`
+    } else if (res.length < 5) {
+        finalres = res.repeat(2)
+    } else {
+        finalres = res
+    }
+    return finalres
+
+}
+
+log(rgb(0, 0, 0))
+log(rgb(0, 0, -20))
+log(rgb(300, 255, 255))
+log(rgb(173, 255, 47))
+log(rgb(5, 291, 90))
+log(rgb(188, 2, 164))
+
+
+
+function hexStringToRGB(hexString) {
+    let x = hexString.replace('#', '')
+    xArr = x.split('')
+    let r = parseInt(xArr.slice(0, 2).join(''), 16)
+    let g = parseInt(xArr.slice(2, 4).join(''), 16)
+    let b = parseInt(xArr.slice(4, 6).join(''), 16)
+
+    let f = new Object
+    f['r'] = parseInt(`${r}`)
+    f['g'] = parseInt(`${g}`)
+    f['b'] = parseInt(`${b}`)
+    return f
+}
+
+log(hexStringToRGB('#FF9933'))
+
+clear()
