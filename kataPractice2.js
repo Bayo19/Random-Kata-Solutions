@@ -1563,3 +1563,14 @@ function hexStringToRGB(hexString) {
 log(hexStringToRGB('#FF9933'))
 
 clear()
+
+reverse = function(array) {
+    let res = []
+    for (let i = array.length - 1; i >= 0; i--) {
+        res.push(array[i])
+    }
+    return res
+}
+
+log(reverse([3, 22, 1]))
+log(reverse([7, 4, 26, 15]))
