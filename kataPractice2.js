@@ -1597,3 +1597,5 @@ log(simpleTransposition('Sample text'))
 log(simpleTransposition('Simple transposition'))
 log(simpleTransposition('All that glitters is not gold'))
 log(simpleTransposition('The better part of valor is discretion'))
+
+clear()
