@@ -1599,3 +1599,17 @@ log(simpleTransposition('All that glitters is not gold'))
 log(simpleTransposition('The better part of valor is discretion'))
 
 clear()
+
+function multiplyAll(n) {
+    return function all(f) {
+        let arr = []
+        for (x of n) {
+            arr.push(x * f)
+        }
+
+        return arr
+    }
+
+}
+
+log(multiplyAll([1, 2, 3])(2))
