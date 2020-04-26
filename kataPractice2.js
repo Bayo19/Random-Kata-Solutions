@@ -1574,3 +1574,26 @@ reverse = function(array) {
 
 log(reverse([3, 22, 1]))
 log(reverse([7, 4, 26, 15]))
+
+clear()
+
+function simpleTransposition(str) {
+    let arr = [
+        [],
+        []
+    ]
+    let strArr = str.split('')
+    for (let i = 0; i < strArr.length; i++) {
+        if (i % 2) {
+            arr[1].push(strArr[i])
+        } else {
+            arr[0].push(strArr[i])
+        }
+    }
+    return [...arr].join('').replace(/,/g, '')
+}
+
+log(simpleTransposition('Sample text'))
+log(simpleTransposition('Simple transposition'))
+log(simpleTransposition('All that glitters is not gold'))
+log(simpleTransposition('The better part of valor is discretion'))
