@@ -1606,10 +1606,33 @@ function multiplyAll(n) {
         for (x of n) {
             arr.push(x * f)
         }
-
         return arr
     }
-
 }
 
 log(multiplyAll([1, 2, 3])(2))
+
+clear()
+
+function ceaser(text, shift) {
+    return text.toUpperCase().replace(/[A-Z]/g, function(a) {
+        return String.fromCharCode(65 + (a.charCodeAt(0) - 65 + shift) % 26)
+    })
+}
+
+log(ceaser('This is not readable for normal people', 2))
+
+function twoSum(num, targ) {
+    for (let i = 0; i < num.length - 1; i++) {
+        for (let j = i + 1; j < num.length; j++) {
+            if (num[i] + num[j] === targ) {
+                return [num[i], num[j]]
+            }
+        }
+    }
+    return `No two integers add up to ${targ}`
+}
+
+log(twoSum([2, 11, 7, 15], 4))
+log(twoSum([3, 11, 6, 15, 75], 9))
+log(twoSum([2, 11, 7, 15], 26))
