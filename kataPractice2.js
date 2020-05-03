@@ -1626,7 +1626,7 @@ function twoSum(num, targ) {
     for (let i = 0; i < num.length - 1; i++) {
         for (let j = i + 1; j < num.length; j++) {
             if (num[i] + num[j] === targ) {
-                return [num[i], num[j]]
+                return [num.indexOf(num[i]), num.indexOf(num[j])]
             }
         }
     }
