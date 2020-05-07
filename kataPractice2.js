@@ -1636,3 +1636,38 @@ function twoSum(num, targ) {
 log(twoSum([2, 11, 7, 15], 4))
 log(twoSum([3, 11, 6, 15, 75], 9))
 log(twoSum([2, 11, 7, 15], 26))
+
+clear()
+
+function onlyVowels(str) {
+    let x = str.replace(/[^aeiou]/g, '')
+    let arr = x.split('')
+    arr = arr.sort(function(a, b) {
+        if (a > b) {
+            return 1
+        }
+        if (b > a) {
+            return -1
+        }
+    })
+    let first = arr[0]
+    let number
+    number = arr.lastIndexOf(first) - arr.indexOf(first) + 1
+    return `${first} appears ${number} times`
+
+}
+
+log(onlyVowels('adegijaaonus'))
+
+function fizzbuzz(n) {
+    let result = []
+    for (let i = 1; i < n + 1; i++) {
+        if (i % 3 != 0 && i % 5 != 0) { result.push(i) }
+        if (i % 3 == 0 && i % 5 != 0) { result.push('Fizz') }
+        if (i % 5 == 0 && i % 3 != 0) { result.push('Buzz') }
+        if (i % 3 == 0 && i % 5 == 0) { result.push('FizzBuzz') }
+    }
+    return result
+}
+
+log(fizzbuzz(15))
