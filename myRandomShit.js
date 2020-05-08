@@ -18,3 +18,10 @@ let objFilter = function(obj, without) {
     let filteredMenu = JSON.parse(JSON.stringify(obj, x))
     return filteredMenu
 }
+
+function swap(x, y) {
+    [x, y] = [y, x]
+    return x
+}
+
+console.log(swap(23, 54))
