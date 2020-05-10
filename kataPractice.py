@@ -8,3 +8,17 @@ def check(seq, elem):
 print(check([1,2,3], 1))
 
 # above is iterative search
+
+# def more_zeros(s):
+#     start = list(s)
+#     result = []
+#     for i in range(len(start)):
+#         result.append(bin(ord(start[i])))
+#     return result
+        
+            
+
+
+
+# print(more_zeros('abcde'))
+

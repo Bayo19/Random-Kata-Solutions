@@ -1671,3 +1671,5 @@ function fizzbuzz(n) {
 }
 
 log(fizzbuzz(15))
+
+clear()
