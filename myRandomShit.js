@@ -25,3 +25,23 @@ function swap(x, y) {
 }
 
 console.log(swap(23, 54))
+console.clear()
+
+function formParser(email, password, validate) {
+    let str = [email, password, validate].join(' ')
+
+    let result = {}
+
+    for (x in str) {
+        const [email, password, validate] = str.split(' ')
+        result['email'] = email
+        result['password'] = password
+        result['validate'] = validate
+        return result
+    }
+
+
+}
+
+console.log(formParser('john@gmail.com', '57666', '57666'))
+console.log(formParser('stacyanne@hotmail.com', '34546', '2352454'))
